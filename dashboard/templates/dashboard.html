@@ -14,11 +14,18 @@
 
     <title>Tailgater</title>
 
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <!-- Simple Side bar CSS -->
     <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">   
+
+	<!-- Bootstrap switch -->
+	<link href="{% static 'css/bootstrap-switch.css' %}" rel="stylesheet">
+	<script src="{% static 'js/bootstrap-switch.js' %}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,11 +34,17 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- jQuery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<style type="text/css">
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    	background: #26a4d6 none repeat scroll 0 0;
+    	color: #fff;
+	}
+	</style>
 
 </head>
 
@@ -72,6 +85,13 @@
 			
 				<ul class="nav navbar-nav navbar-right">
 	              <li><a href="#" style="color:inherit">Hello Thomas</a></li>
+	              <li><a href="#" style="color:inherit">
+	              <input type="checkbox" name="my-checkbox" checked></a>
+	              
+	              </li>
+	              
+	              
+	              
 	            </ul>
 			
 			</div>			
@@ -109,6 +129,11 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    $(document).ready(function(){
+    	$("[name='my-checkbox']").bootstrapSwitch({'size': 'mini', onColor: 'primary', 'onText':'ON','offText':'OFF'});    	
+    })
+    
+    
     </script>
 
 </body>
